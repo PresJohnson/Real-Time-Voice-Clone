@@ -11,11 +11,6 @@ from utils.argutils import print_args
 if __name__ == "__main__":
     class MyFormatter(argparse.ArgumentDefaultsHelpFormatter, argparse.RawDescriptionHelpFormatter):
         pass
-
-    parser = argparse.ArgumentParser(
-        description="Creates ground-truth aligned (GTA) spectrograms from the vocoder.",
-        formatter_class=MyFormatter
-    )
     parser.add_argument("datasets_root", type=Path, help=\
         "Path to the directory containing your SV2TTS directory. If you specify both --in_dir and "
         "--out_dir, this argument won't be used.")

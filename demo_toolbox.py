@@ -16,8 +16,6 @@ if __name__ == '__main__':
     parser.add_argument("-d", "--datasets_root", type=Path, help= \
         "Path to the directory containing your datasets. See toolbox/__init__.py for a list of "
         "supported datasets.", default=None)
-    parser.add_argument("-m", "--models_dir", type=Path, default="saved_models",
-                        help="Directory containing all saved models")
     parser.add_argument("--cpu", action="store_true", help=\
         "If True, all inference will be done on CPU")
     parser.add_argument("--seed", type=int, default=None, help=\

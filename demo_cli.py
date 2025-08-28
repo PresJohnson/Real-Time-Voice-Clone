@@ -22,6 +22,9 @@ if __name__ == '__main__':
     parser.add_argument("-e", "--enc_model_fpath", type=Path,
                         default="saved_models/default/encoder.pt",
                         help="Path to a saved encoder")
+    parser.add_argument("-s", "--syn_model_fpath", type=Path,
+                        default="saved_models/default/synthesizer.pt",
+                        help="Path to a saved synthesizer")
     parser.add_argument("-v", "--voc_model_fpath", type=Path,
                         default="saved_models/default/vocoder.pt",
                         help="Path to a saved vocoder")

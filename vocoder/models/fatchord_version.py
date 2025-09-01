@@ -11,13 +11,10 @@ class ResBlock(nn.Module):
         super().__init__()
         self.conv1 = nn.Conv1d(dims, dims, kernel_size=1, bias=False)
         self.conv2 = nn.Conv1d(dims, dims, kernel_size=1, bias=False)
-        self.batch_norm1 = nn.BatchNorm1d(dims)
         self.batch_norm2 = nn.BatchNorm1d(dims)
 
     def forward(self, x):
         residual = x
-        x = self.conv1(x)
-        x = self.batch_norm1(x)
         x = F.relu(x)
         x = self.conv2(x)
         x = self.batch_norm2(x)

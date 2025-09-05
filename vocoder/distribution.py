@@ -25,10 +25,7 @@ def discretized_mix_logistic_loss(y_hat, y, num_classes=65536,
     # (B x T x C)
     y_hat = y_hat.transpose(1, 2)
 
-    # unpack parameters. (B, T, num_mixtures) x 3
-    logit_probs = y_hat[:, :, :nr_mix]
-    means = y_hat[:, :, nr_mix:2 * nr_mix]
-    log_scales = torch.clamp(y_hat[:, :, 2 * nr_mix:3 * nr_mix], min=log_scale_min)
+    
 
     # B x T x 1 -> B x T x num_mixtures
     y = y.expand_as(means)

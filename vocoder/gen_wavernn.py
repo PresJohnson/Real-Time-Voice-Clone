@@ -11,9 +11,7 @@ def gen_testset(model: WaveRNN, test_set, samples, batched, target, overlap, sav
 
         print('\n| Generating: %i/%i' % (i, samples))
 
-        x = x[0].numpy()
-
-        bits = 16 if hp.voc_mode == 'MOL' else hp.bits
+        
 
         if hp.mu_law and hp.voc_mode != 'MOL' :
             x = decode_mu_law(x, 2**bits, from_labels=True)

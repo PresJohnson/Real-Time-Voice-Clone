@@ -9,6 +9,9 @@ num_mels = _syn_hp.num_mels
 hop_length = _syn_hp.hop_size
 win_length = _syn_hp.win_size
 fmin = _syn_hp.fmin
+min_level_db = _syn_hp.min_level_db
+ref_level_db = _syn_hp.ref_level_db
+mel_max_abs_value = _syn_hp.max_abs_value
 preemphasis = _syn_hp.preemphasis
 apply_preemphasis = _syn_hp.preemphasize
 

@@ -24,12 +24,6 @@ def load_model(weights_fpath, verbose=True):
         sample_rate=hp.sample_rate,
         mode=hp.voc_mode
     )
-
-    if torch.cuda.is_available():
-        _model = _model.cuda()
-        _device = torch.device('cuda')
-    else:
-        _device = torch.device('cpu')
     
     if verbose:
         print("Loading model weights at %s" % weights_fpath)

@@ -37,6 +37,9 @@ def train(run_id: str, syn_dir: Path, voc_dir: Path, models_dir: Path, ground_tr
         mode=hp.voc_mode
     )
 
+    if torch.cuda.is_available():
+        model = model.cuda()
+
     # Initialize the optimizer
     optimizer = optim.Adam(model.parameters())
     for p in optimizer.param_groups:
